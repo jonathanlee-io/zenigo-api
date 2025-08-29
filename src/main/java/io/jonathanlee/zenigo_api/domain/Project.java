@@ -3,8 +3,8 @@ package io.jonathanlee.zenigo_api.domain;
 import java.time.Instant;
 
 public record Project(
-        long id,
-        long organizationId,
+        String id,
+        String organizationId,
         String name,
         String key,
         String description,
