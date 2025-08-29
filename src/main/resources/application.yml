@@ -1,0 +1,18 @@
+zenigo:
+  jwt:
+    secret: ${JWT_SECRET:secret}
+  cors:
+    allowed-origin-patterns: ${CORS_ALLOWED_ORIGINS:http://localhost:4200}
+spring:
+  application:
+    name: zenigo-api
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/}
+    username: ${DATABASE_USER:postgres}
+    password: ${DATABASE_PASSWORD:password}
+  data:
+    redis:
+      cluster:
+        nodes: ${REDIS_URL:redis://localhost:6379}
+  rabbitmq:
+    addresses: ${RABBITMQ_URL:localhost:5672}
