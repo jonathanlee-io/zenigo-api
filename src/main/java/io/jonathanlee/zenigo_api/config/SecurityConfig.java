@@ -36,6 +36,7 @@ public class SecurityConfig {
                 .cors(httpSecurityCorsConfigurer -> httpSecurityCorsConfigurer.configurationSource(this.corsConfigurationSource()))
                 .authorizeHttpRequests(authorizationManagerRequestMatcherRegistry -> authorizationManagerRequestMatcherRegistry
                         .requestMatchers("/v1/projects/**").permitAll()
+                        .requestMatchers("/v1/organizations/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .oauth2ResourceServer(httpSecurityOAuth2ResourceServerConfigurer -> httpSecurityOAuth2ResourceServerConfigurer.jwt(Customizer.withDefaults()))
